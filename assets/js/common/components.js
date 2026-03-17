@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const header = document.querySelector('custom-header');
   const footer = document.querySelector('custom-footer');
 
-  const { initConfig } = await import('./assets/data/data.js');
+  const { initConfig } = await import('../../data/data.js');
   const configData = await initConfig();
   if (configData) {
     await Promise.all([
