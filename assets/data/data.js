@@ -16,21 +16,21 @@ async function loadData(pass) {
 
 // コンフィグデータの取得
 export async function initConfig() {
-    return await loadData('/assets/data/json/config.json');
+    return await loadData('./assets/data/json/config.json');
 }
 // プロフィールデータの取得
 export async function initProfile() {
-    return await loadData('/assets/data/json/profile.json');
+    return await loadData('./assets/data/json/profile.json');
 }
 // Aboutデータの取得
 export async function initAbout() {
-    return await loadData('/assets/data/json/about.json');
+    return await loadData('./assets/data/json/about.json');
 }
 // skillsデータの取得
 export async function initSkills() {
-    return await loadData('/assets/data/json/skills.json');
+    return await loadData('./assets/data/json/skills.json');
 }
 // worksデータの取得
 export async function initWorks() {
-    return await loadData('/assets/data/json/works.json');
+    return await loadData('./assets/data/json/works.json');
 }
