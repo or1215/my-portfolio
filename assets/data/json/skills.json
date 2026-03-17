@@ -1,0 +1,35 @@
+[
+  {
+    "category": "Languages（プログラミング言語）",
+    "skills": [
+      { "item": "JavaScript", "level": 4, "startedAt": "2024-10", "description": "Web Components / 非同期処理" },
+      { "item": "TypeScript", "level": 2, "startedAt": "2026-02", "description": "型安全な開発の導入" },
+      { "item": "Java", "level": 5, "startedAt": "2023-10", "description": "オブジェクト指向の基礎" },
+      { "item": "Python", "level": 2, "startedAt": "2024-04", "description": "スクリプト自動化" },
+      { "item": "VBA", "level": 4, "startedAt": "2025-01", "description": "業務プロセス効率化" }
+    ]
+  },
+  {
+    "category": "Database（データベース）",
+    "skills": [
+      { "item": "PostgreSQL", "level": 4, "startedAt": "2025-04", "description": "RDB設計・運用" },
+      { "item": "MySQL", "level": 4, "startedAt": "2024-04", "description": "Webアプリ用DB" },
+      { "item": "Oracle", "level": 4, "startedAt": "2025-10", "description": "商用DBの基礎" },
+      { "item": "SQLite", "level": 4, "startedAt": "2025-12", "description": "軽量DBの組み込み" }
+    ]
+  },
+  {
+    "category": "Infrastructure（インフラ）",
+    "skills": [
+      { "item": "AWS", "level": 1, "startedAt": "2026-01", "description": "EC2 / VPC / Auto Scaling" }
+    ]
+  },
+  {
+    "category":"フレームワーク・ライブラリ",
+    "skills": [
+      { "item": "Express", "level": 3, "startedAt": "2025-12", "description": "Node.jsのWebフレームワーク" },
+      { "item": "jQuery", "level": 3, "startedAt": "2025-04", "description": "DOM操作のためのライブラリ" },
+      { "item": "Struts", "level": 5, "startedAt": "2025-10", "description": "JavaのWebフレームワーク" }
+    ]
+  }
+]

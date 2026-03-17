@@ -1,0 +1,264 @@
+/* ==========================================================================
+   1. Base & Variables
+   ========================================================================== */
+:root {
+  /* Colors */
+  --primary-color    : #2563eb;
+  --text-main        : #1e293b;
+  --text-sub         : #64748b;
+  --bg-light         : #f8fafc;
+  --white            : #ffffff;
+  --border-color     : #e2e8f0;
+
+  /* Layout Shared */
+  --header-height    : 150px; /* 固定ヘッダーの高さを定義 */
+  --footer-height    : 60px; /* 固定フッターの高さを定義 */
+  --transition-speed : 0.3s;
+}
+
+body {
+  margin           : 0;
+  padding          : 0;
+  font-family      : 'Helvetica Neue', Arial, sans-serif;
+  color            : var(--text-main);
+  background-color : var(--bg-light);
+  display          : flex;
+  flex-direction   : column;
+  min-height       : 100vh;  /* 画面いっぱいの高さを確保 */
+}
+
+a {
+    color             : var(--primary-color);
+    text-decoration   : none;
+    transition        : color var(--transition-speed);
+}
+/* ==========================================================================
+   2. Layout Structure (固定表示の核)
+   ========================================================================== */
+
+/* 固定ヘッダー */
+.c-header {
+  flex-shrink: 0;
+  height: var(--header-height);
+  
+  /* 背景画像の指定 */
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+    url('../../img/mainImage.jpg'); 
+  background-size: cover;
+  background-position: center;
+  
+  /* モバイルでの不具合を防ぐため、fixedは慎重に（または消す） */
+  /* background-attachment: fixed; */ 
+  
+  /* 背後をぼかす（背景が透過している場合に有効） */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Safari対策 */
+  
+  border-bottom: 1px solid var(--border-color);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* スクロールするメインエリア */
+.l-main {
+  flex-grow  : 1;      /* 余ったスペースをすべて占有 */
+  overflow-y       : auto;   /* 縦方向にスクロールを許可 */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* iOSの慣性スクロール対応 */
+  height: 0;
+}
+
+/* 固定フッター */
+.c-footer {
+  flex-shrink      : 0;      /* 潰れないように固定 */
+  height           : var(--footer-height);
+  background-color : var(--white);
+  border-top       : 1px solid var(--border-color);
+  display          : flex;
+  align-items      : center;
+  z-index          : 999;
+  padding          : 1rem;
+}
+
+/* ==========================================================================
+   3. Component Details
+   ========================================================================== */
+
+.c-header__inner, .c-footer__inner {
+  max-width        : var(--container-max);
+  margin           : 0 auto;
+  margin           : 0 2rem;
+  display          : flex;
+  align-items      : center;
+  justify-content  : space-between;
+  height           : 100%;
+}
+.c-footer__inner {
+  width            : 100%;
+}
+
+.c-footer__copy {
+  font-size        : 0.75rem;
+  color            : var(--text-sub);
+}
+
+/* ==========================================================================
+   4. Responsive (PC / Mobile Landscape)
+   ========================================================================== */
+
+@media (hover: hover) {
+  :root {
+    --footer-height: 80px; /* PCでは少しゆったりさせる */
+  }
+}
+
+/* スマホ横持ち時の高さ調整 */
+@media (hover: none) {
+  :root {
+    --footer-height: 40px;
+  }
+}
+
+/* ==========================================================================
+   5. Page Specific Styles
+   ========================================================================== */
+   /* 共通セクションスタイル */
+.session {
+  background-color: #f5f5f5;
+  padding: 25px 50px 0 50px;
+}
+/* profile */
+.profile-content {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+.profile-item {
+  display: flex;
+  align-items: center;
+}
+.profile-item-title {
+  font-weight: bold;
+  width: 100px;
+}
+.profile-item-text {
+  font-weight: bold;
+}
+
+/* about */
+.about-content {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* skills */
+.skills-content {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+.skill-category-group {
+    padding: 0;
+}
+.category-name {
+    border-bottom: 4px solid #333;
+    padding: 0 0 15px 10px;
+    font-size: 1.2rem;
+}
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc; 
+}
+.skill-name {
+    font-weight: bold;
+    flex: 1;
+    padding-left: 20px;
+}
+.skill-level {
+    color: #f1c40f; /* ゴールド（星の色） */
+    margin: 0 1rem;
+    letter-spacing: 2px;
+}
+.skill-period {
+    color: #666;
+    font-size: 0.9rem;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* works */
+.works-content {
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.work-group-title {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+/* 共通のカードスタイル */
+.work-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 実務実績：横長で情報を厚く見せる */
+.business-item { border-left: 10px solid #0056b3; padding: 30px; }
+.work-details { margin: 15px 0; font-size: 0.95rem; color: #444; }
+.work-highlights {
+    background: #f0f7ff;
+    padding: 15px;
+    border-radius: 6px;
+    color: #0056b3;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* 個人制作：グリッドレイアウト */
+.personal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.personal-item .work-info { padding: 20px; }
+.work-thumbnail img { width: 100%; height: 200px; object-fit: cover; }
+
+/* 技術タグ */
+.tech-tag {
+    display: inline-block;
+    background: #e9ecef;
+    color: #495057;
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin: 0 5px 5px 0;
+}
+
+/* リンクボタン */
+.work-links { margin-top: 15px; display: flex; gap: 10px; }
+.btn-link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: #0056b3;
+    border: 1px solid #0056b3;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.btn-link:hover { background: #0056b3; color: #fff; }

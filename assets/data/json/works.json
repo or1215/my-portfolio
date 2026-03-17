@@ -1,0 +1,42 @@
+[
+  {
+    "id": "calendar-app",
+    "title": "Calendar App",
+    "category": "Web Application",
+    "period": "2026.02",
+    "techStack": ["Node.js", "Express", "SQLite", "GitHub Actions"],
+    "description": "実用的なカレンダーアプリケーション。",
+    "details": [],
+    "githubUrl": "https://github.com/...",
+    "siteUrl": "https://...",
+    "thumbnail": "./img/works/calendar-app.png"
+  },
+  {
+    "id": "my-portfolio",
+    "title": "MY-PORTFOLIO",
+    "category": "Web Site",
+    "period": "2026.03",
+    "techStack": ["Vanilla JS", "Web Components", "JSON Data Management"],
+    "description": "ポートフォリオサイト。",
+    "details": [],
+    "githubUrl": "https://github.com/...",
+    "siteUrl": "http://...",
+    "thumbnail": "./assets/images/work/portfolio.jpg"
+  },
+  {
+    "id": "fire-management-system",
+    "title": "消防業務管理システム",
+    "category": "Enterprise System / Public Infrastructure",
+    "period": "2025.09 - 継続中",
+    "techStack": ["Java", "DB（Oracle/PostgreSQL）", "JavaScript", "HTML/CSS", "VBA", "Excel-Linked Tech"],
+    "description": "地方自治体向けの消防業務支援システムの開発・保守に参画。フロントからバックエンド、運用支援まで一気通貫で担当。",
+    "details": [
+        "国表集計・オンライン報告の自動化による、事務処理工数の大幅な削減",
+        "各種届出・台帳・報告書間のデータ連携基盤の開発による、文書作成コストの最小化",
+        "Excel形式を採用した柔軟な帳票出力機能の実装（現場での様式変更を可能にし、高い拡張性を実現）",
+        "Java/SQLを用いた大規模基盤の保守および、ユーザーの要望に即した新機能追加",
+        "現場職員からの問い合わせに対する技術的サポートおよびトラブルシューティング"
+    ],
+    "highlights": "『現場の事務負担を減らし、本来の警防・予防業務に集中できる環境を作る』ことを目的とした、実用性の高いシステム開発を追求しています。"
+  }
+]

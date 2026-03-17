@@ -1,0 +1,143 @@
+:root{
+    --color: #000;
+    --menu-background-color: #000;
+}
+.c-header__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration : none;
+    color: #000;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.c-nav__link,.c-btn-contact {
+    margin-left: 2rem;
+    color: #000;
+    font-size: 1.5rem;
+    transition: color var(--transition-speed);
+}
+/* PCの設定 */
+@media (hover: hover) {
+    #menu-btn {
+        display: none;
+    }
+}
+
+/* スマホ設定 */
+@media (hover: none) {
+    .c-nav {
+        display: flex; 
+        flex-direction: column;
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%; 
+        height: calc(100vh - var(--header-height));
+        background-color: var(--white);
+        padding: 2rem;
+        z-index: 999;
+        
+        opacity: 0; 
+        visibility: hidden; 
+        transform: translateX(100%); 
+        
+        /* アニメーションの設定 */
+        transition: 
+            opacity 0.4s ease,
+            transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+            visibility 0.5s;
+    }
+    .c-nav__link, .c-btn-contact {
+        margin: 1.5rem 0; 
+        margin-left: 0;
+        font-size: 2rem;
+        display: block;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px); 
+        transition: 
+            opacity 0.4s ease, 
+            transform 0.4s ease;
+    }
+
+    /* ハンバーガーメニューのスタイル */
+    #menu-btn {
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        z-index: 1000;
+        cursor: pointer;
+    }
+    #menu-btn span,
+    #menu-btn span::before,
+    #menu-btn span::after {
+        content: "";
+        height: 6px;
+        width: 100%;
+        border-radius: 3px;
+        background: var(--menu-background-color);
+        position: absolute;
+        transition: 0.2s;
+    }
+    #menu-btn span::before {
+        top: 12px;
+    }
+    #menu-btn span::after {
+        top: 24px;
+    }
+    
+    #nav-input:checked~#menu-btn span {
+        top: 8px;
+        transform: rotate(45deg);
+        background: var(--menu-background-color);
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+    #nav-input:checked~#menu-btn span::before {
+        opacity: 0;
+    }
+    #nav-input:checked~#menu-btn span::after {
+        top: 0;
+        transform: rotate(-90deg);
+        background: #000;
+    }
+    #nav-input:checked ~ .c-nav {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);    
+    }
+    #nav-input:checked ~ .l-main {
+        overflow: hidden;
+    }
+
+    /* --- メニューが開いた時（#nav-input:checked）の状態 --- */
+    #nav-input:checked ~ .c-nav .c-nav__link,
+    #nav-input:checked ~ .c-nav .c-btn-contact {
+        opacity: 1;
+        transform: translateY(0); /* 元の位置に戻る */
+    }
+    /* 各メニューアイテムの遅延設定：0.3秒ずつずらして出現させる */
+    #nav-input:checked ~ .c-nav .c-nav__link:nth-child(1) {
+        transition-delay: 0.3s; 
+    }
+    #nav-input:checked ~ .c-nav .c-nav__link:nth-child(2) {
+        transition-delay: 0.4s;
+    }
+    #nav-input:checked ~ .c-nav .c-nav__link:nth-child(3) {
+        transition-delay: 0.5s;
+    }
+    #nav-input:checked ~ .c-nav .c-nav__link:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+    /* 最後のボタン（Contact） */
+    #nav-input:checked ~ .c-nav .c-btn-contact {
+        transition-delay: 0.7s;
+    }
+}

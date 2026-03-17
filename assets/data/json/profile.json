@@ -1,0 +1,14 @@
+{
+    "NAME": {
+        "label": "NAME",
+        "values": ["オビ　リンタロウ"]
+    },
+    "JOB": {
+        "label": "JOB",
+        "values": ["フルスタックエンジニア"]
+    },
+    "SNS": {
+        "label": "SNS",
+        "values": ["<a href=\"https://github.com/or1215\" target=\"_blank\">GitHub</a>"]
+    }
+}

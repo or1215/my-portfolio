@@ -1,0 +1,32 @@
+:root {
+    --profile-card-bg: #f9f9f9;
+}
+
+.p-profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* PCでは左右50%ずつ */
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.p-profile-info {
+    padding: 2rem;
+    background-color: var(--profile-card-bg);
+    border-radius: 12px;
+}
+
+.p-profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--accent-blue);
+}
+
+/* スマホ表示への対応 */
+@media (max-width: 768px) {
+    .p-profile-grid {
+        grid-template-columns: 1fr; /* 縦並びに切り替え */
+    }
+}

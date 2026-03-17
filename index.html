@@ -2,19 +2,46 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>MY-Portfolio</title>
+    <!-- データの取得 -->
+    <script type="module" src="./assets/data/data.js" defer></script>
+    <script type="module" src="./assets/js/common/components.js" defer></script>
+    <script type="module" src="/assets/js/pages/home/main.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 </head>
 <body>
-    <h1>こんにちは、私のポートフォリオへようこそ！</h1>
-    <p>AWSの練習として、GitHubから自動連携して公開しています。</p>
-    
-    <h2>自己紹介</h2>
-    <p>ここにあなたの自己紹介を書いてください。</p>
+    <custom-header></custom-header>
 
-    <h2>作成物一覧</h2>
-    <ul>
-        <li><a href="#">プロジェクト1（準備中）</a></li>
-        <li><a href="#">プロジェクト2（準備中）</a></li>
-    </ul>
+    <main id="project-list" class="l-main">
+        <!-- プロフィール -->
+        <section id="profile" class="session">
+            <h1>👤　Profile</h1>
+            <div class="profile-content" id="profile-content"></div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="session">
+            <h1>🛠️　About</h1>
+            <div class="about-content" id="about-content"></div>
+        </section>
+
+        <!-- スキル一覧 -->
+        <section id="skills" class="session">
+            <h1>💻　Skills</h1>
+             <div class="skills-content" id="skills-content"></div>
+        </section>
+
+        <!-- 実績一覧 -->
+        <section id="works" class="session">
+            <h1>🚀　Works</h1>
+            <div class="works-content" id="works-content"></div>
+        </section>
+        
+        <custom-footer></custom-footer>
+    </main>
+
+    
 </body>
 </html>

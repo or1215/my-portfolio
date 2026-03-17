@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>MY-Portfolio</title>
+    <!-- データの取得 -->
+    <script type="module" src="./assets/data/data.js" defer></script>
+    <script type="module" src="./assets/js/common/components.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/profile.css">
+</head>
+<body>
+    <custom-header></custom-header>
+
+    <main id="project-list" class="l-main">
+    <section id="profile-detailed" class="l-section">
+        <div class="l-container">
+            <h2 class="c-section-title">About & Skills</h2>
+            
+            <div class="p-profile-grid">
+                <div class="p-profile-info">
+                    <div class="p-profile-image">
+                        <img src="./assets/images/profile-icon.jpg" alt="Yohei Munesada">
+                    </div>
+                    <div class="p-profile-text">
+                        <h3>Yohei Munesada</h3>
+                        <p class="u-text-muted">Full-Stack Engineer / AWS Cloud Quest Explorer</p>
+                        <p class="p-profile-description">
+                            「想いを、動く形に。」をモットーに、Strutsを用いた大規模基盤から、最新のAWSクラウド環境まで幅広く対応。
+                            確実な保守性と、モダンなUI/UXの融合を追求しています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-skills-list">
+                    <div id="skills-container">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works-list">
+        </section>
+
+    <custom-footer></custom-footer>
+</main>
+    
+</body>
+</html>
