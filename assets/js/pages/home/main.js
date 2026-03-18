@@ -1,5 +1,5 @@
 // ページ読み込み時に実行
-import { initProfile, initAbout, initSkills, initWorks } from '../../../data/data.js';
+import { initProfile, initAbout, initSkills, initWorks } from '/my-portfolio/assets/data/data.js';
 document.addEventListener('DOMContentLoaded', initProfile);
 
 /* 表示するプロフィール項目 */
