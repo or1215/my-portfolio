@@ -7,7 +7,7 @@
     "techStack": ["Node.js", "Express", "SQLite", "GitHub Actions"],
     "description": "実用的なカレンダーアプリケーション。",
     "details": [],
-    "githubUrl": "https://github.com/...",
+    "githubUrl": "https://github.com/or1215/calendar-app",
     "siteUrl": "https://...",
     "thumbnail": "./img/works/calendar-app.png"
   },
@@ -19,8 +19,8 @@
     "techStack": ["Vanilla JS", "Web Components", "JSON Data Management"],
     "description": "ポートフォリオサイト。",
     "details": [],
-    "githubUrl": "https://github.com/...",
-    "siteUrl": "http://...",
+    "githubUrl": "https://github.com/or1215/my-portfolio",
+    "siteUrl": "https://or1215.github.io/my-portfolio/",
     "thumbnail": "./img/works/my-portfolio.png"
   },
   {
