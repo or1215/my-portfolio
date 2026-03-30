@@ -103,21 +103,53 @@ function createSkillsList(skillsData) {
         categoryDiv.innerHTML = `
             <h3 class="category-name">${group.category}</h3>
             <ul class="skill-list">
-                ${group.skills.map(skill => skillItem(skill)).join('')}
+                ${group.skills.map(skill => skillItem(skill, group.category)).join('')}
             </ul>
         `;
         content.appendChild(categoryDiv);
     });
 }
 // スキルアイテムのHTML生成
-function skillItem(skill) {
+function skillItem(skill,category) {
+    if (!skill.item) return '';
     return `
             <li class="skill-item">
                 <span class="skill-name">${skill.item}</span>
-                <span class="skill-level">${'★'.repeat(skill.level)}${'☆'.repeat(5 - skill.level)}</span>
-                <span class="skill-period">(${calculateExperience(skill.startedAt)})</span>
+                <span class="skill-level">${getSkillLevel(skill.level)}</span>
+                <span class="skill-period">(${getSkillPeriod(skill,category)})</span>
             </li>
             `
+}
+// スキルレベルの取得
+function getSkillLevel(level) {
+    if (!level) return '';
+    const maxLevel = 5;
+    const filledStars = '★'.repeat(level);
+    const emptyStars = '☆'.repeat(maxLevel - level);
+    return filledStars + emptyStars;
+}
+// スキル年数ラベルの設定
+function getSkillPeriod(skill,category) {
+    if (category === "資格") {
+        return getCertificationPeriod(skill);
+    }
+    if (skill.startedAt) {
+        return calculateExperience(skill.startedAt);
+    }
+    if (skill.gettedAt) {
+        return "取得日：" + skill.gettedAt;
+    }
+    return "準備中";
+}
+// 資格の年数表示
+function getCertificationPeriod(skill) {
+    // 資格状況の取得
+    const status = skill.status;
+    console.log("status:", status);
+    if (status === "passed") return "★合格：" + (skill.gettedAt? skill.gettedAt + "取得" : "");
+    if (status === "preparing") return "準備中：" + (skill.description? skill.description + "受験" : "受験日未定");
+    if (status === "studying") return "勉強中：" + (skill.startedAt? skill.startedAt + "開始": "勉強開始日未定");
+    return "未定";
 }
 // 経験年数の計算
 function calculateExperience(startedAt) {
@@ -203,8 +235,8 @@ function createPersonalWorks(personalWorks) {
                             ${work.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                         </div>
                         <div class="work-links">
-                            <a href="${work.githubUrl}" target="_blank" class="btn-link">GitHub</a>
-                            <a href="${work.siteUrl}" target="_blank" class="btn-link">Live Demo</a>
+                            ${work.githubUrl ? `<a href="${work.githubUrl}" target="_blank" class="btn-link">GitHub</a>` : ''}
+                            ${work.siteUrl ? `<a href="${work.siteUrl}" target="_blank" class="btn-link">Live Demo</a>` : ''}
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,6 @@
 /* ヘッダーとフッターの共通コンポーネント */
+import { initGithub } from '/my-portfolio/assets/data/data.js';
+const githubURL = await initGithub();
 
 /* ヘッダー生成 */
 class CustomHeader extends HTMLElement {
@@ -41,7 +43,7 @@ class CustomFooter extends HTMLElement {
         <div class="c-footer__inner">
           <p class="c-footer__copy">&copy; ${year} ${copyright}</p>
           <div class="c-footer__sns">
-            <a href="" class="c-footer__sns-link" target="_blank">GitHub</a>
+            <a href="${githubURL}" class="c-footer__sns-link" target="_blank">GitHub</a>
           </div>
         </div>
       </footer>

@@ -1,6 +1,7 @@
 [
   {
     "category": "Languages（プログラミング言語）",
+
     "skills": [
       { "item": "JavaScript", "level": 4, "startedAt": "2024-10", "description": "Web Components / 非同期処理" },
       { "item": "TypeScript", "level": 2, "startedAt": "2026-02", "description": "型安全な開発の導入" },
@@ -9,27 +10,51 @@
       { "item": "VBA", "level": 4, "startedAt": "2025-01", "description": "業務プロセス効率化" }
     ]
   },
+
   {
     "category": "Database（データベース）",
+
     "skills": [
-      { "item": "PostgreSQL", "level": 4, "startedAt": "2025-04", "description": "RDB設計・運用" },
-      { "item": "MySQL", "level": 4, "startedAt": "2024-04", "description": "Webアプリ用DB" },
-      { "item": "Oracle", "level": 4, "startedAt": "2025-10", "description": "商用DBの基礎" },
-      { "item": "SQLite", "level": 4, "startedAt": "2025-12", "description": "軽量DBの組み込み" }
+      { "item": "PostgreSQL", "level": 4, "startedAt": "2025-04", "description": "RDB設計・運用" }
+    , { "item": "MySQL", "level": 4, "startedAt": "2024-04", "description": "Webアプリ用DB" }
+    , { "item": "Oracle", "level": 4, "startedAt": "2025-10", "description": "商用DBの基礎" }
+    , { "item": "SQLite", "level": 4, "startedAt": "2025-12", "description": "軽量DBの組み込み" }
     ]
   },
+
   {
     "category": "Infrastructure（インフラ）",
+
     "skills": [
       { "item": "AWS", "level": 1, "startedAt": "2026-01", "description": "EC2 / VPC / Auto Scaling" }
     ]
   },
+
   {
     "category":"フレームワーク・ライブラリ",
+
     "skills": [
-      { "item": "Express", "level": 3, "startedAt": "2025-12", "description": "Node.jsのWebフレームワーク" },
-      { "item": "jQuery", "level": 3, "startedAt": "2025-04", "description": "DOM操作のためのライブラリ" },
-      { "item": "Struts", "level": 5, "startedAt": "2025-10", "description": "JavaのWebフレームワーク" }
+      { "item": "Express", "level": 3, "startedAt": "2025-12", "description": "Node.jsのWebフレームワーク" }
+    , { "item": "jQuery", "level": 3, "startedAt": "2025-04", "description": "DOM操作のためのライブラリ" }
+    , { "item": "Struts", "level": 5, "startedAt": "2025-10", "description": "JavaのWebフレームワーク" }
+    ]
+  },
+
+  {
+    "category":"資格",
+    
+    "skills": [
+      { "item": "基本情報技術者","gettedAt": "2023-04","status":"passed" }
+    , { "item": "応用情報技術者","status":"preparing", "description": "2026-11" }
+
+    , { "item": "Python基礎認定試験","gettedAt": "2024-01","status":"passed" }
+
+    , { "item": "Microsoft Office Specialist Excel 365&2019 ","gettedAt": "2025-03","status":"passed" }
+
+    , { "item": "AWS Certified Cloud Practitioner","gettedAt": "2026-03","status":"passed" }
+    , { "item": "AWS Certified Solutions Architect – Associate","status":"preparing", "description": "2026-04" }
+    
+    , { "item": "日商簿記検定3級","gettedAt": "2025-01","status":"passed" }
     ]
   }
 ]

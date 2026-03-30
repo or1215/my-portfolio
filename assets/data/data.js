@@ -34,3 +34,7 @@ export async function initSkills() {
 export async function initWorks() {
     return await loadData('./assets/data/json/works.json');
 }
+// githubURLの取得
+export async function initGithub() {
+    return 'https://github.com/or121/';
+}
