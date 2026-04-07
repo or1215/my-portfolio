@@ -4,10 +4,11 @@
     "title": "Calendar App",
     "category": "Web Application",
     "period": "2026.02",
-    "techStack": ["Node.js", "Express", "SQLite", "GitHub Actions"],
+    "techStack": ["Node.js", "Express", "DB（PostgreSQL）", "GitHub Actions"],
     "description": "実用的なカレンダーアプリケーション。",
     "details": [],
     "githubUrl": "https://github.com/or1215/calendar-app",
+    "siteUrl": "https://calendar-app-0kon.onrender.com/",
     "thumbnail": "./img/works/calendar-app.png"
   },
   {

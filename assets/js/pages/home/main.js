@@ -1,6 +1,5 @@
 // ページ読み込み時に実行
 import { initProfile, initAbout, initSkills, initWorks } from '/my-portfolio/assets/data/data.js';
-document.addEventListener('DOMContentLoaded', initProfile);
 
 /* 表示するプロフィール項目 */
 const profileDisplayList = ["NAME","JOB","SNS"];
@@ -147,7 +146,7 @@ function getCertificationPeriod(skill) {
     const status = skill.status;
     console.log("status:", status);
     if (status === "passed") return "★合格：" + (skill.gettedAt? skill.gettedAt + "取得" : "");
-    if (status === "preparing") return "準備中：" + (skill.description? skill.description + "受験" : "受験日未定");
+    if (status === "preparing") return "準備中：" + (skill.examdate? skill.examdate + "受験" : "受験日未定");
     if (status === "studying") return "勉強中：" + (skill.startedAt? skill.startedAt + "開始": "勉強開始日未定");
     return "未定";
 }
@@ -223,6 +222,7 @@ function createPersonalWorks(personalWorks) {
         html += `<h2 class="work-group-title">Personal Projects</h2>`;
         html += `<div class="personal-grid">`;
         personalWorks.forEach(work => {
+            if (!workDisplayList.includes(work.id)) return; // 表示する作品を絞る
             html += `
                 <div class="work-item personal-item">
                     <div class="work-thumbnail">

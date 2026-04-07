@@ -15,9 +15,9 @@ class CustomHeader extends HTMLElement {
             <input id="nav-input" type="checkbox" class="nav-hidden" style="display: none;" />
             <label id="menu-btn" for="nav-input"><span></span></label>
             <nav class="c-nav">
-                <a href="/index.html#profile" class="c-nav__link">Profile</a>
-                <a href="/index.html#projects" class="c-nav__link">Projects</a>
-                <a href="/index.html#skills" class="c-nav__link">Skills</a>
+                <a href="/my-portfolio/index.html" class="c-nav__link">Profile</a>
+                <a href="/my-portfolio/index.html#projects" class="c-nav__link">Projects</a>
+                <a href="/my-portfolio/skills.html" class="c-nav__link">Skills</a>
                 <a class="c-btn-contact" id="contact-input">${label}</a>
             </nav>
         </div>

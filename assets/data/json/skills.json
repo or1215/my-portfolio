@@ -41,18 +41,27 @@
   },
 
   {
+    "category": "Development Tools & Process",
+    "skills": [
+      { "item": "Git / GitHub", "level": 4, "startedAt": "2023-10", "description": "プルリクエストベースのチーム開発、コンフリクト解消" },
+      { "item": "Linux", "level": 3, "startedAt": "2024-06", "description": "基本的なコマンド操作、シェルスクリプトによる定型業務の自動化" },
+      { "item": "Agile / Scrum", "level": 3, "startedAt": "2025-01", "description": "スプリント開発の経験、朝会や振り返りのファシリテーション" }
+    ]
+  },
+  
+  {
     "category":"資格",
     
     "skills": [
       { "item": "基本情報技術者","gettedAt": "2023-04","status":"passed" }
-    , { "item": "応用情報技術者","status":"preparing", "description": "2026-11" }
+    , { "item": "応用情報技術者","status":"preparing", "examdate": "2026-11" }
 
     , { "item": "Python基礎認定試験","gettedAt": "2024-01","status":"passed" }
 
     , { "item": "Microsoft Office Specialist Excel 365&2019 ","gettedAt": "2025-03","status":"passed" }
 
     , { "item": "AWS Certified Cloud Practitioner","gettedAt": "2026-03","status":"passed" }
-    , { "item": "AWS Certified Solutions Architect – Associate","status":"preparing", "description": "2026-04" }
+    , { "item": "AWS Certified Solutions Architect – Associate","status":"preparing", "examdate": "2026-04" }
     
     , { "item": "日商簿記検定3級","gettedAt": "2025-01","status":"passed" }
     ]

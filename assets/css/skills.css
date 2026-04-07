@@ -1,0 +1,96 @@
+
+.p-skill-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.p-skill-section {
+    margin-bottom: 3rem;
+}
+
+.p-skill-section__title {
+    font-size: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* カードレイアウト */
+.p-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.p-skill-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-speed);
+}
+
+.p-skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.p-skill-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.p-skill-card__name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.p-skill-card__level {
+    color: #f59e0b; /* ゴールド系 */
+    font-size: 0.875rem;
+}
+
+.p-skill-card__date {
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    margin-bottom: 0.5rem;
+}
+
+.p-skill-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* 資格リスト */
+.p-cert-list {
+    list-style: none;
+    padding: 0;
+}
+
+.p-cert-item {
+    background: var(--white);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.p-cert-item.is-preparing {
+    border-left: 4px solid #94a3b8;
+    opacity: 0.8;
+}
+
+.p-cert-item.is-passed {
+    border-left: 4px solid #10b981; /* 完了・合格色 */
+}
+
+.p-cert-item__date {
+    font-size: 0.85rem;
+    min-width: 80px;
+    color: var(--text-sub);
+}

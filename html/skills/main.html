@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Set | Portfolio</title> 
+    <!-- データの取得 -->
+    <script type="module" src="my-portfolio/assets/data/data.js" defer></script>
+    <script type="module" src="./assets/js/common/components.js" defer></script>
+    <script type="module" src="./assets/js/pages/skills/main.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="my-portfolio/assets/css/skills.css">
+</head>
+<body>
+
+    <custom-header></custom-header>
+
+    <main class="l-main">
+        <div class="p-skill-container">
+            
+            <!-- プログラミング言語 -->
+            <div id="LANGUAGES"></div>
+            <!-- データベース -->
+            <div id="DATABASE"></div>
+
+            <!-- インフラ -->
+            <div id="INFRASTRUCTURE"></div>
+
+            <!-- フレームワーク・ライブラリ -->
+            <div id="FRAMEWORK-LIBRARY"></div>
+                
+            <!-- 資格 -->
+            <div id="CERTIFICATIONS"></div>
+            
+        </div>
+        <custom-footer></custom-footer>
+    </main>
+    
+    <script>
+    
+    if (!skillsSection) {
+        console.error("HTML要素 'skills-content' が見つかりません！"); // ログ2
+        return;
+    }
+    
+    if (!skillsData) {
+        console.error("引数 skillsData が空です！"); // ログ3
+        return;
+    }
+
+    console.log("データの中身をループします:", skillsData);
+    </script>
+</body>
+</html>
