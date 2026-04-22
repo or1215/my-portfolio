@@ -24,6 +24,29 @@
     "thumbnail": "./img/works/my-portfolio.png"
   },
   {
+    "id": "aws-flask-blog",
+    "title": "AWS Cloud Blog System",
+    "category": "Web Application / Infrastructure",
+    "period": "2026.04",
+    "techStack": [
+      "Python (Flask)",
+      "MySQL (RDS)",
+      "AWS Cognito",
+      "S3 / CloudFront",
+      "Jinja2"
+    ],
+    "description": "FlaskとAWSの各種サービスを組み合わせた、認証機能付きブログシステム。",
+    "details": [
+      "AWS Cognitoを利用したセキュアなユーザー認証と、メール送付による本人確認機能の実装",
+      "S3とCloudFrontを組み合わせた、高速でスケーラブルな画像配信・ストレージ構成",
+      "Flask(Jinja2)によるサーバーサイドレンダリングと、MySQL(RDS)を用いた動的な記事・プロフィール管理",
+      "ログイン状態に応じたルーティングのガード処理（必須認証ページの制御）"
+    ],
+    "githubUrl": "https://github.com/or1215/aws-flask-blog",
+    "siteUrl": "https://your-blog-url.com",
+    "thumbnail": "./img/works/aws-blog.png"
+  },
+  {
     "id": "fire-management-system",
     "title": "消防業務管理システム",
     "category": "Enterprise System / Public Infrastructure",
