@@ -1,6 +1,7 @@
 :root{
-    --color: #000;
-    --menu-background-color: #000;
+    --color: var(--color);
+    --hover-color: #1a73e8;
+    --menu-background-color: var(--color);
 }
 .c-header__logo{
     display: flex;
@@ -8,16 +9,38 @@
     justify-content: center;
     height: 100%;
     text-decoration : none;
-    color: #000;
+    color: var(--color);
     font-weight: bold;
     font-size: 3rem;
 }
-
-.c-nav__link,.c-btn-contact {
+/* .c-nav__link,.c-btn-contact {
     margin-left: 2rem;
-    color: #000;
+    color: var(--color);
     font-size: 1.5rem;
     transition: color var(--transition-speed);
+}
+.c-nav__link:hover, .c-btn-contact:hover {
+    color: var(--hover-color);
+} */
+ .c-nav__link, .c-btn-contact {
+    margin-left: 2rem;
+    color: var(--color);
+    font-size: 1.5rem;
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+    display: inline-block; /* transformを有効にするため */
+}
+/* コンタクトボタンを塗りつぶしタイプに */
+.c-btn-contact {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #000;
+    border-radius: 50px; /* 丸みを持たせてモダンに */
+    transition: all var(--transition-speed);
+    background-color: #fff;
+}
+.c-nav__link:hover, .c-btn-contact:hover {
+    opacity: 0.6; /* 透過させてグレーに見せる */
+    color: var(--hover-color);
+    transform: translateY(-2px); /* 2pxだけ上に浮かす */
 }
 /* PCの設定 */
 @media (hover: hover) {
@@ -106,7 +129,7 @@
     #nav-input:checked~#menu-btn span::after {
         top: 0;
         transform: rotate(-90deg);
-        background: #000;
+        background: var(--color);
     }
     #nav-input:checked ~ .c-nav {
         opacity: 1;

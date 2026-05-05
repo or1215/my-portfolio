@@ -36,5 +36,5 @@ export async function initWorks() {
 }
 // githubURLの取得
 export async function initGithub() {
-    return 'https://github.com/or121/';
+    return 'https://github.com/or1215/';
 }

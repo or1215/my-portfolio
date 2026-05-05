@@ -4,7 +4,7 @@ import { initProfile, initAbout, initSkills, initWorks } from '/my-portfolio/ass
 /* 表示するプロフィール項目 */
 const profileDisplayList = ["NAME","JOB","SNS"];
 /* 表示するwork項目 */
-const workDisplayList = ["calendar-app","my-portfolio"];
+const workDisplayList = ["calendar-app","my-portfolio","blog-app"];
 
 /* 共通コンポーネントの初期化 */
 document.addEventListener('DOMContentLoaded', async () => {
@@ -199,9 +199,6 @@ function createBusinessWorks(businessWorks) {
                             <h3 class="work-title">${work.title}</h3>
                         </div>
                         <p class="work-description">${work.description}</p>
-                        <ul class="work-details">
-                            ${work.details.map(detail => `<li>${detail}</li>`).join('')}
-                        </ul>
                         <div class="work-highlights">
                             <strong>💡 Point:</strong> ${work.highlights}
                         </div>

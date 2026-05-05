@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | Portfolio</title> 
+    <!-- データの取得とスクリプト -->
+    <script type="module" src="./assets/js/common/components.js" defer></script>
+    <script type="module" src="./assets/js/pages/project/main.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/project.css">
+</head>
+<body>
+
+    <custom-header></custom-header>
+
+    <main class="l-main">
+        <!-- 企業案件セクション -->
+        <section class="p-works">
+            <h1 class="p-works__title">Enterprise Projects</h1>
+            <div id="WORKS_LIST_BUSINESS" class="p-works__grid">
+                <!-- JavaScriptでここにカードが挿入されます -->
+            </div>
+        </section>
+        <!-- 個人制作セクション -->
+        <section class="p-works">
+            <h1 class="p-works__title">Personal Projects</h1>
+            <div id="WORKS_LIST_PERSONAL" class="p-works__grid">
+                <!-- JavaScriptでここにカードが挿入されます -->
+            </div>
+        </section>
+        <custom-footer></custom-footer>
+    </main>
+
+    
+</body>
+</html>

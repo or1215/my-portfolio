@@ -5,7 +5,17 @@
     "skills": [
       { "item": "JavaScript", "level": 4, "startedAt": "2024-10", "description": "Web Components / 非同期処理" },
       { "item": "TypeScript", "level": 2, "startedAt": "2026-02", "description": "型安全な開発の導入" },
-      { "item": "Java", "level": 5, "startedAt": "2023-10", "description": "オブジェクト指向の基礎" },
+      { "item": "Java", "level": 5, "startedAt": "2023-10", "description": "共通化設計とリファクタリングによる、保守性の高い実践的開発経験", 
+        "note": [
+          "JavaとStrutsを使用した消防OAシステムの保守・機能追加",
+          "既存コードのリファクタリングとパフォーマンス改善",
+          "共通ライブラリの開発とコードレビューを通じた品質向上。最大23クラスの改修が必要なものを、共通化とリファクタリングにより1クラスに削減",
+          "ラムダ式やストリームAPIを活用したコードのモダン化と可読性向上",
+          "マジックナンバーの定数化や、ネストの深いコードは分割して作成することによる可読性の高いコード開発",
+          "継承やインターフェースを活用した柔軟な設計と、例外処理の適切な実装による堅牢なコードの作成",
+          "将来の機能追加や変更を見据えた拡張性の高いコード設計、バグを起こさせない設計の実装"
+        ]
+      },
       { "item": "Python", "level": 2, "startedAt": "2024-04", "description": "スクリプト自動化" },
       { "item": "VBA", "level": 4, "startedAt": "2025-01", "description": "業務プロセス効率化" }
     ]
@@ -15,9 +25,9 @@
     "category": "Database（データベース）",
 
     "skills": [
-      { "item": "PostgreSQL", "level": 4, "startedAt": "2025-04", "description": "RDB設計・運用" }
+      { "item": "PostgreSQL", "level": 4, "startedAt": "2025-04", "description": "RDB設計・運用/可読性の良いSQLの作成" }
     , { "item": "MySQL", "level": 4, "startedAt": "2024-04", "description": "Webアプリ用DB" }
-    , { "item": "Oracle", "level": 4, "startedAt": "2025-10", "description": "商用DBの基礎" }
+    , { "item": "Oracle", "level": 4, "startedAt": "2025-10", "description": "DBの基礎/RDB運用" }
     , { "item": "SQLite", "level": 4, "startedAt": "2025-12", "description": "軽量DBの組み込み" }
     ]
   },
@@ -26,7 +36,7 @@
     "category": "Infrastructure（インフラ）",
 
     "skills": [
-      { "item": "AWS", "level": 1, "startedAt": "2026-01", "description": "EC2 / VPC / Auto Scaling" }
+      { "item": "AWS", "level": 2, "startedAt": "2026-01", "description": "EC2 / VPC / Auto Scaling" }
     ]
   },
 

@@ -11,7 +11,7 @@
   --border-color     : #e2e8f0;
 
   /* Layout Shared */
-  --header-height    : 150px; /* 固定ヘッダーの高さを定義 */
+  --header-height    : 100px; /* 固定ヘッダーの高さを定義 */
   --footer-height    : 60px; /* 固定フッターの高さを定義 */
   --transition-speed : 0.3s;
 }

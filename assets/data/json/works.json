@@ -24,27 +24,21 @@
     "thumbnail": "./img/works/my-portfolio.png"
   },
   {
-    "id": "aws-flask-blog",
-    "title": "AWS Cloud Blog System",
-    "category": "Web Application / Infrastructure",
+    "id": "blog-app",
+    "title": "AWSサービスを活用したブログアプリ",
+    "category": "DevOps / Infrastructure",
     "period": "2026.04",
-    "techStack": [
-      "Python (Flask)",
-      "MySQL (RDS)",
-      "AWS Cognito",
-      "S3 / CloudFront",
-      "Jinja2"
-    ],
-    "description": "FlaskとAWSの各種サービスを組み合わせた、認証機能付きブログシステム。",
+    "techStack": ["GitHub Actions", "AWS EC2", "systemd", "Shell Script", "AWS S3", "AWS CloudFront"],
+    "description": "GitHub Actionsを利用して、ブログアプリのCI/CDパイプラインを構築。コードの変更が自動的にEC2インスタンスへデプロイされる仕組みを実装。",
     "details": [
-      "AWS Cognitoを利用したセキュアなユーザー認証と、メール送付による本人確認機能の実装",
-      "S3とCloudFrontを組み合わせた、高速でスケーラブルな画像配信・ストレージ構成",
-      "Flask(Jinja2)によるサーバーサイドレンダリングと、MySQL(RDS)を用いた動的な記事・プロフィール管理",
-      "ログイン状態に応じたルーティングのガード処理（必須認証ページの制御）"
+        "GitHubのmainブランチへのプッシュを検知し、EC2へ自動デプロイするワークフローを構築。",
+        "appleboy/ssh-actionを活用し、リモートサーバー上でのgit pull、依存ライブラリの更新、サービスの再起動を自動化。",
+        "systemdを用いたアプリケーションのデーモン化により、エラー時の自動再起動とログ管理の効率化を実現。",
+        "GitHub Secretsを利用した安全なSSH認証情報の管理と、AWSセキュリティグループの最適化。"
     ],
-    "githubUrl": "https://github.com/or1215/aws-flask-blog",
-    "siteUrl": "https://your-blog-url.com",
-    "thumbnail": "./img/works/aws-blog.png"
+    "githubUrl": "https://github.com/or1215/aws-blog-app",
+    "siteUrl": "http://54.95.114.190",
+    "thumbnail": "./img/works/aws-blog-app.png"
   },
   {
     "id": "fire-management-system",
