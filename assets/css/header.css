@@ -34,14 +34,14 @@
     transform: translateY(-2px); /* 2pxだけ上に浮かす */
 }
 /* PCの設定 */
-@media (hover: hover) {
+@media screen and (min-width: 769px) {
     #menu-btn {
         display: none;
     }
 }
 
 /* スマホ設定 */
-@media (hover: none) {
+@media screen and (max-width: 768px) {
     .c-nav {
         display: flex; 
         flex-direction: column;
