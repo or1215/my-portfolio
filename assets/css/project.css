@@ -156,3 +156,13 @@
 .c-link:hover {
     text-decoration: underline;
 }
+
+/* スマホ表示への対応 */
+@media screen and (max-width: 768px) {
+    .p-works{
+        padding: 20px 5px;
+    }
+    .p-works__title {
+        margin-bottom: 10px;
+    }
+}
