@@ -163,7 +163,7 @@
         margin: 0;
         margin-bottom: 30px;
     }
-     .business-item {
+    .business-item {
         padding: var(--mobile-padding);
     }
     .works-content{
@@ -174,5 +174,11 @@
     }
     .personal-grid{
         gap: 0px;
+    }
+    .tech-stack{
+        padding: var(--mobile-padding);
+    }
+    .tech-tag {
+        margin: 0 5px 5px 0;
     }
 }
