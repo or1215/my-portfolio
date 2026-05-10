@@ -319,14 +319,14 @@ a:hover {
    5. Responsive Adjustments
    -------------------------------------------------------------------------- */
 
-/* Desktop (Hover-capable devices) */
+/* PC設定 */
 @media (hover: hover) {
   :root {
     --footer-height: 80px;
   }
 }
 
-/* Mobile Landscape / Non-hover devices */
+/* モバイル設定 */
 @media (hover: none) {
   :root {
     --footer-height: 40px;

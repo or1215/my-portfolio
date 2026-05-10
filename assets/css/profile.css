@@ -25,7 +25,7 @@
 }
 
 /* スマホ表示への対応 */
-@media (max-width: 768px) {
+@media (hover: none) {
     .p-profile-grid {
         grid-template-columns: 1fr; /* 縦並びに切り替え */
     }
