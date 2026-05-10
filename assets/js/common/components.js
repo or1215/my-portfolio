@@ -71,4 +71,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (header) header.setup(configData);
     if (footer) footer.setup(configData);
   }
+
+  /* ページ説明の生成 */
+  if (document.querySelector('custom-question')) createPageDescription();
+  
 });
+
+/* --------------------------------------------------------------------------
+   ページの説明文の生成
+   -------------------------------------------------------------------------- */
+function createPageDescription() {
+  const questionBtn = document.getElementById('js-question-icon');
+  const pageModal = document.getElementById('js-page-modal');
+  const closeBtn = document.getElementById('js-page-modal-close');
+
+  // アイコンクリックで表示
+  questionBtn.addEventListener('click', () => {
+    pageModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // 背後のスクロールを止める
+  });
+
+  // 閉じるボタンで非表示
+  closeBtn.addEventListener('click', () => {
+    pageModal.style.display = 'none';
+    document.body.style.overflow = ''; // スクロール再開
+  });
+
+  // 背景（モーダル外側）クリックで非表示
+  window.addEventListener('click', (e) => {
+    if (e.target === pageModal) {
+      pageModal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+}

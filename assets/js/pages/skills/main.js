@@ -27,7 +27,10 @@ const renderSkills = async () => {
                                     ` : ''}
                                 </div>
                                 <p class="p-skill-card__desc">${skill.description?.length > 15 ? skill.description.substring(0, 15) + '...' : skill.description || ''}</p>
-                            </div>
+                            
+                            ${ skill.status == 'passed' ? `<p class="p-skill-section__status">✅ 合格</p>` :
+                               skill.status == 'preparing' ? `<p class="p-skill-section__status">⚠ 受験予定</p>` : '' }
+                        </div>
                         `).join('')}
                     </div>
                 </section>

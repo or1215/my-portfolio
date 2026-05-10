@@ -222,9 +222,6 @@ function createPersonalWorks(personalWorks) {
             if (!workDisplayList.includes(work.id)) return; // 表示する作品を絞る
             html += `
                 <div class="work-item personal-item">
-                    <div class="work-thumbnail">
-                        <img src="${work.thumbnail}" alt="${work.title}" onerror="this.src='https://via.placeholder.com/400x250?text=No+Image'">
-                    </div>
                     <div class="work-info">
                         <h3 class="work-title">${work.title}</h3>
                         <p class="work-description">${work.description}</p>
