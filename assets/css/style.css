@@ -1,6 +1,6 @@
-/* ==========================================================================
-   1. Base & Variables
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   1. Root Variables & Base
+   -------------------------------------------------------------------------- */
 :root {
   /* Colors */
   --primary-color    : #2563eb;
@@ -11,134 +11,181 @@
   --border-color     : #e2e8f0;
 
   /* Layout Shared */
-  --header-height    : 100px; /* 固定ヘッダーの高さを定義 */
-  --footer-height    : 60px; /* 固定フッターの高さを定義 */
+  --header-height    : 100px; /* 固定ヘッダーの高さ */
+  --footer-height    : 60px;  /* 固定フッターの高さ */
   --transition-speed : 0.3s;
+  --container-max    : 1200px; /* コンテナの最大幅 */
 }
 
 body {
   margin           : 0;
   padding          : 0;
-  font-family      : 'Helvetica Neue', Arial, sans-serif;
+  font-family      : 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   color            : var(--text-main);
   background-color : var(--bg-light);
   display          : flex;
   flex-direction   : column;
-  min-height       : 100vh;  /* 画面いっぱいの高さを確保 */
+  min-height       : 100vh;
 }
 
 a {
-    color             : var(--primary-color);
-    text-decoration   : none;
-    transition        : color var(--transition-speed);
+  color            : var(--primary-color);
+  text-decoration  : none;
+  transition       : opacity var(--transition-speed);
 }
-/* ==========================================================================
-   2. Layout Structure (固定表示の核)
-   ========================================================================== */
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   2. Layout Structure
+   -------------------------------------------------------------------------- */
 
 /* 固定ヘッダー */
 .c-header {
-  flex-shrink: 0;
-  height: var(--header-height);
-  
-  /* 背景画像の指定 */
-  background: 
-    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-    url('../../img/mainImage.jpg'); 
-  background-size: cover;
-  background-position: center;
-  
-  /* モバイルでの不具合を防ぐため、fixedは慎重に（または消す） */
-  /* background-attachment: fixed; */ 
-  
-  /* 背後をぼかす（背景が透過している場合に有効） */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Safari対策 */
-  
-  border-bottom: 1px solid var(--border-color);
-  z-index: 999;
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 999;
   width: 100%;
+  height: var(--header-height);
+  flex-shrink: 0;
+  
+  /* デザイン背景 */
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+    url('../../img/mainImage.jpg') center / cover;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* スクロールするメインエリア */
+/* スクロール本体 */
 .l-main {
-  flex-grow  : 1;      /* 余ったスペースをすべて占有 */
-  overflow-y       : auto;   /* 縦方向にスクロールを許可 */
+  flex-grow: 1;
+  overflow-y: auto;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; /* iOSの慣性スクロール対応 */
-  height: 0;
+  -webkit-overflow-scrolling: touch;
+  /* Safariでのスクロール領域確保のためのheight 0設定 */
+  height: 0; 
 }
 
 /* 固定フッター */
 .c-footer {
-  flex-shrink      : 0;      /* 潰れないように固定 */
-  height           : var(--footer-height);
-  background-color : var(--white);
-  border-top       : 1px solid var(--border-color);
-  display          : flex;
-  align-items      : center;
-  z-index          : 999;
-  padding          : 1rem;
+  flex-shrink: 0;
+  height: var(--footer-height);
+  background-color: var(--white);
+  border-top: 1px solid var(--border-color);
+  z-index: 999;
 }
 
-/* ==========================================================================
-   3. Component Details
-   ========================================================================== */
-
-.c-header__inner, .c-footer__inner {
-  max-width        : var(--container-max);
-  margin           : 0 auto;
-  margin           : 0 2rem;
-  display          : flex;
-  align-items      : center;
-  justify-content  : space-between;
-  height           : 100%;
+/* 固定クエスチョン */
+.c-question-icon {
+  position: fixed;
+  top: calc(var(--header-height) + 20px);
+  right: 100px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1000;
 }
+.c-question-icon:hover {
+  background-color: #1e40af;
+}
+/* モーダル背景 */
+.p-question {
+  display: none; 
+  position: fixed;
+  z-index: 1100;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  color: #e0f2fe;
+}
+/* 閉じるボタン */
+.p-question__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-sub);
+  transition: color var(--transition-speed);
+}
+.p-question__close:hover {
+  color: var(--text-main);
+}
+.p-question__content {
+  margin: 1rem;
+}
+/* タイトルと本文 */
+.p-question__title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding: 0.5rem;
+}
+.p-question__note {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.p-question__note ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+.p-question__note li {
+  margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. Common Components
+   -------------------------------------------------------------------------- */
+
+/* インナークラス（中央寄せ・余白） */
+.c-header__inner, 
 .c-footer__inner {
-  width            : 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .c-footer__copy {
-  font-size        : 0.75rem;
-  color            : var(--text-sub);
+  font-size: 0.75rem;
+  color: var(--text-sub);
 }
 
-/* ==========================================================================
-   4. Responsive (PC / Mobile Landscape)
-   ========================================================================== */
-
-@media (hover: hover) {
-  :root {
-    --footer-height: 80px; /* PCでは少しゆったりさせる */
-  }
-}
-
-/* スマホ横持ち時の高さ調整 */
-@media (hover: none) {
-  :root {
-    --footer-height: 40px;
-  }
-}
-
-/* ==========================================================================
-   5. Page Specific Styles
-   ========================================================================== */
-   /* 共通セクションスタイル */
+/* セクション共通 */
 .session {
   background-color: #f5f5f5;
-  padding: 25px 50px 0 50px;
+  padding: 50px 50px 0;
 }
-/* profile */
+
+/* --------------------------------------------------------------------------
+   4. Page Sections (Profile, About, Skills, Works)
+   -------------------------------------------------------------------------- */
+
+/* --- Profile --- */
 .profile-content {
-  margin: 0 auto;
   padding: 0 50px;
 }
 .profile-item {
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 .profile-item-title {
   font-weight: bold;
@@ -148,117 +195,140 @@ a {
   font-weight: bold;
 }
 
-/* about */
+/* --- About --- */
 .about-content {
-  margin: 0 auto;
   padding: 0 50px;
 }
 
-/* skills */
+/* --- Skills --- */
 .skills-content {
-  margin: 0 auto;
   padding: 0 50px;
-}
-.skill-category-group {
-    padding: 0;
 }
 .category-name {
-    border-bottom: 4px solid #333;
-    padding: 0 0 15px 10px;
-    font-size: 1.2rem;
+  border-bottom: 4px solid #333;
+  padding: 0 0 15px 10px;
+  font-size: 1.2rem;
 }
 .skill-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .skill-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px dashed #ccc; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #ccc; 
 }
 .skill-name {
-    font-weight: bold;
-    flex: 1;
-    padding-left: 20px;
+  font-weight: bold;
+  flex: 1;
+  padding-left: 20px;
 }
 .skill-level {
-    color: #f1c40f; /* ゴールド（星の色） */
-    margin: 0 1rem;
-    letter-spacing: 2px;
+  color: #f1c40f;
+  margin: 0 1rem;
+  letter-spacing: 2px;
 }
 .skill-period {
-    color: #666;
-    font-size: 0.9rem;
-    min-width: 80px;
-    text-align: right;
+  color: #666;
+  font-size: 0.9rem;
+  min-width: 80px;
+  text-align: right;
 }
 
-/* works */
+/* --- Works --- */
 .works-content {
-    margin: 0 auto;
-    padding: 0 50px;
+  padding: 0 50px;
 }
 .work-group-title {
-    font-size: 1.8rem;
-    margin: 40px 0 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #333;
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #333;
 }
-
-/* 共通のカードスタイル */
 .work-item {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* 実務実績：横長で情報を厚く見せる */
-.business-item { border-left: 10px solid #0056b3; padding: 30px; }
-.work-details { margin: 15px 0; font-size: 0.95rem; color: #444; }
+/* 実務実績スタイル */
+.business-item {
+  border-left: 10px solid #0056b3;
+  padding: 30px;
+}
 .work-highlights {
-    background: #f0f7ff;
-    padding: 15px;
-    border-radius: 6px;
-    color: #0056b3;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+  background: #f0f7ff;
+  padding: 15px;
+  border-radius: 6px;
+  color: #0056b3;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
-/* 個人制作：グリッドレイアウト */
+/* 個人制作グリッド */
 .personal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
-.personal-item .work-info { padding: 20px; }
-.work-thumbnail img { width: 100%; height: 300px; object-fit: cover; }
+.personal-item .work-info {
+  padding: 20px;
+  border-top: 4px solid #ff8800;
+}
+.work-thumbnail img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
 
-/* 技術タグ */
+/* UI Elements: Tags & Buttons */
 .tech-tag {
-    display: inline-block;
-    background: #e9ecef;
-    color: #495057;
-    padding: 3px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    margin: 0 5px 5px 0;
+  display: inline-block;
+  background: #e9ecef;
+  color: #495057;
+  padding: 3px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin: 0 5px 5px 0;
+}
+.work-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+.btn-link {
+  font-size: 0.85rem;
+  color: #0056b3;
+  border: 1px solid #0056b3;
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.btn-link:hover {
+  background: #0056b3;
+  color: #fff;
 }
 
-/* リンクボタン */
-.work-links { margin-top: 15px; display: flex; gap: 10px; }
-.btn-link {
-    text-decoration: none;
-    font-size: 0.85rem;
-    color: #0056b3;
-    border: 1px solid #0056b3;
-    padding: 5px 12px;
-    border-radius: 4px;
-    transition: 0.3s;
+/* --------------------------------------------------------------------------
+   5. Responsive Adjustments
+   -------------------------------------------------------------------------- */
+
+/* Desktop (Hover-capable devices) */
+@media (hover: hover) {
+  :root {
+    --footer-height: 80px;
+  }
 }
-.btn-link:hover { background: #0056b3; color: #fff; }
+
+/* Mobile Landscape / Non-hover devices */
+@media (hover: none) {
+  :root {
+    --footer-height: 40px;
+  }
+}

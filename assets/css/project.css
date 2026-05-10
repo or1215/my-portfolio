@@ -1,53 +1,70 @@
-/* Works Section */
+/* --------------------------------------------------------------------------
+   1. Worksセクション
+   -------------------------------------------------------------------------- */
+
+/* Worksページ全体のラッパー */
 .p-works {
-    padding: 20px 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* セクションタイトル（左ボーダーでアクセント） */
 .p-works__title {
     padding-left: 12px;
     font-size: 2rem;
-    border-left: #1976d2 6px solid;
+    border-left: 6px solid #1976d2;
 }
 
+/* カードを並べるグリッドレイアウト */
 .p-works__grid {
     display: grid;
     gap: 30px;
 }
 
-/* Card Style */
+
+/* --------------------------------------------------------------------------
+   2. カード（共通）
+   -------------------------------------------------------------------------- */
+
+/* カード本体 */
 .c-card {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
+/* ホバー時に浮き上がるアニメーション */
 .c-card:hover {
     transform: translateY(-5px);
 }
 
+/* サムネイル画像（幅いっぱいに表示） */
 .c-card__img-wrapper img {
     width: 100%;
     object-fit: cover;
 }
 
+/* カードの本文エリア */
 .c-card__body {
     padding: 20px;
 }
 
+/* 制作・担当期間 */
 .c-card__period {
     font-size: 0.85rem;
     color: #666;
 }
 
+/* プロジェクト名 */
 .c-card__title {
     font-size: 1.25rem;
     margin: 8px 0;
 }
 
+/* カテゴリバッジ（個人制作・受託など） */
 .c-card__category {
     display: inline-block;
     background: #f0f0f0;
@@ -57,45 +74,14 @@
     margin-bottom: 12px;
 }
 
+/* プロジェクトの概要説明 */
 .c-card__desc {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-.c-tag {
-    display: inline-block;
-    background: #e3f2fd;
-    color: #1976d2;
-    padding: 2px 8px;
-    font-size: 0.75rem;
-    border-radius: 12px;
-    margin: 0 4px 4px 0;
-}
-
-.c-card__links {
-    margin-top: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-}
-
-.c-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin-right: 15px;
-    font-size: 0.9rem;
-}
-
-.c-link:hover {
-    text-decoration: underline;
-}
-/* 企業案件カードの特別スタイル */
-.c-card--business {
-    border-top: 4px solid #005bac; /* ビジネスらしいアクセントカラー */
-}
-
-/* 業務詳細のスクロールエリア */
+/* 業務詳細のスクロールエリア（箇条書きリスト想定） */
 .c-card__details {
     height: 180px;
     overflow-y: auto;
@@ -108,11 +94,12 @@
     line-height: 1.6;
 }
 
+/* 詳細リストの行間 */
 .c-card__details li {
     margin-bottom: 6px;
 }
 
-/* ハイライトエリア */
+/* 実績・こだわりなどのハイライトエリア */
 .c-card__highlights {
     font-size: 0.85rem;
     color: #333;
@@ -120,4 +107,50 @@
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 15px;
+}
+
+/* リンクエリア（カード下部、区切り線で分離） */
+.c-card__links {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+
+/* --------------------------------------------------------------------------
+   3. カードバリアント
+   -------------------------------------------------------------------------- */
+
+/* 企業案件カード（上部にビジネス用アクセントライン） */
+.c-card--business {
+    border-top: 4px solid #005bac;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. インラインパーツ
+   -------------------------------------------------------------------------- */
+
+/* 技術スタックや特徴を示すタグ */
+.c-tag {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    border-radius: 12px;
+    margin: 0 4px 4px 0;
+}
+
+/* 外部リンク（GitHub・デモサイトなど） */
+.c-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+.c-link:hover {
+    text-decoration: underline;
 }
