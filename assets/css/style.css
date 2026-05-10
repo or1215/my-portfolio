@@ -98,7 +98,7 @@ h1{
   justify-content: center;
   font-size: 1rem;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 900;
 }
 .c-question-icon:hover {
   background-color: #1e40af;
