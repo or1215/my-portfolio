@@ -25,7 +25,7 @@
   },
   {
     "id": "blog-app",
-    "title": "AWSサービスを活用したブログアプリ",
+    "title": "Blog App",
     "category": "DevOps / Infrastructure",
     "period": "2026.04",
     "techStack": ["GitHub Actions", "AWS EC2", "systemd", "Shell Script", "AWS S3", "AWS CloudFront"],
@@ -34,11 +34,47 @@
         "GitHubのmainブランチへのプッシュを検知し、EC2へ自動デプロイするワークフローを構築。",
         "appleboy/ssh-actionを活用し、リモートサーバー上でのgit pull、依存ライブラリの更新、サービスの再起動を自動化。",
         "systemdを用いたアプリケーションのデーモン化により、エラー時の自動再起動とログ管理の効率化を実現。",
-        "GitHub Secretsを利用した安全なSSH認証情報の管理と、AWSセキュリティグループの最適化。"
+        "GitHub Secretsを利用した安全なSSH認証情報の管理と、AWSセキュリティグループの最適化。",
+        "AWS S3とCloudFrontを組み合わせた静的コンテンツの高速配信基盤の構築。",
+        "cognitoを用いた認証基盤の実装により、ユーザー管理と認証を実装"
     ],
     "githubUrl": "https://github.com/or1215/aws-blog-app",
     "siteUrl": "http://54.95.114.190",
     "thumbnail": "./img/works/aws-blog-app.png"
+  },
+  {
+    "id": "serverless-news-summarizer",
+    "title": "Serverless News Summarizer",
+    "category": "DevOps / Lambda / S3 / CloudFront",
+    "period": "",
+    "techStack": [
+      "TypeScript",
+      "AWS Lambda",
+      "AWS CDK",
+      "Amazon DynamoDB",
+      "Amazon S3",
+      "Amazon CloudFront",
+      "Amazon EventBridge",
+      "AWS SSM Parameter Store",
+      "Amazon CloudWatch",
+      "GitHub Actions",
+      "Google Gemini API",
+      "Jest"
+    ],
+    "description": "技術ブログの新着記事をAIで自動要約し、Slackへのダイジェスト通知と静的Webサイトへの公開を行うサーバーレスBot。AWS CDKによるIaC・GitHub ActionsのOIDC認証・Google Gemini APIを活用し作成しました。",
+    "details": [
+      "AWS CDKを用いてLambda・DynamoDB・S3・CloudFront・EventBridgeをコードで管理するInfrastructure as Codeを実践。",
+      "GitHub ActionsにOIDC認証を導入し、AWSアクセスキーをSecretsに保存しないセキュアなCI/CDパイプラインを構築。テスト通過後のみデプロイされる2ジョブ構成を実装。",
+      "Google Gemini APIで技術記事を100〜150文字に自動要約。レートリミット（429）・モデル廃止（404）に対し指数バックオフによるリトライとエラー分類ごとの対応方針を設計。",
+      "DynamoDBへの送信済みURL記録によるニュース記事の重複排除と、TTL（30日）による自動レコード削除でDynamoDB無料枠内での運用を実現。",
+      "Slack Block Kitを用いたダイジェスト形式の通知を実装。新着0件時の通知スキップ・致命的エラー時のSlackアラート送信など、エラーハンドリングを体系化。",
+      "LambdaがHTMLを動的生成しS3へアップロード、CloudFront（OAC設定）経由でHTTPS公開する毎日自動更新型の静的Webサイトを構築。ダークモード対応・レスポンシブ対応・XSSエスケープ処理を実装。",
+      "APIキー・Webhook URLをAWS SSM Parameter Store（SecureString）で管理し、機密情報のコード混入を防止。",
+      "JestおよびTs-jestを使用し、外部APIをモックで差し替えた単体テストを実装。重複排除・上限フィルタリング・0件スキップ動作を検証。"
+    ],
+    "githubUrl": "https://github.com/or1215/serverless-news-summarizer",
+    "siteUrl": "https://d1yaal62vph94k.cloudfront.net",
+    "thumbnail": "./img/works/news-digest.png"
   },
   {
     "id": "fire-management-system",
