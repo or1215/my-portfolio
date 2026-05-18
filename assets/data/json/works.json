@@ -3,10 +3,15 @@
     "id": "calendar-app",
     "title": "Calendar App",
     "category": "Web Application",
-    "period": "2026.02",
+    "period": "2025.12 - 2026.01",
     "techStack": ["Node.js", "Express", "DB（PostgreSQL）", "GitHub Actions"],
     "description": "実用的なカレンダーアプリケーション。",
-    "details": [],
+    "objective" : "node.jsを活用し、非同期処理の特性やエコシステムを理解・習得するため。また、自身のHTML/CSS/JavaScriptスキルを確認するため。",
+    "details": [
+        "Node.jsとExpressを使用して、ユーザーがイベントを作成・編集・削除できるRESTful APIを構築。",
+        "layout.htmlをテンプレートエンジンとして利用し、ユーザーフレンドリーなUIを実装。",
+        "外部のカレンダーライブラリに依存せず、HTML/CSS/JavaScriptを用いてカレンダーおよびイベント管理機能をスクラッチで開発。サーバー主導の動的レイアウト生成ロジックを独自に実装しました。"
+    ],
     "githubUrl": "https://github.com/or1215/calendar-app",
     "siteUrl": "https://calendar-app-0kon.onrender.com/",
     "thumbnail": "./img/works/calendar-app.png"
@@ -15,10 +20,15 @@
     "id": "my-portfolio",
     "title": "MY-PORTFOLIO",
     "category": "Web Site",
-    "period": "2026.03",
+    "period": "2026.02 - 2026.03",
     "techStack": ["Vanilla JS", "Web Components", "JSON Data Management"],
     "description": "ポートフォリオサイト。",
-    "details": [],
+    "objective": "自身のスキル、作成物、経験を伝えるため。案件獲得や転職活動において、クライアントや採用担当者に対して、私の技術力や実績を効果的にアピールするためのプラットフォームを構築すること。",
+    "details": [
+        "Vanilla JSとWeb Componentsを使用して、再利用可能なUIコンポーネントを作成し、モジュール化されたコードベースを実現。",
+        "作品データをJSON形式で管理し、動的にコンテンツを生成することで、サイトの拡張性と保守性を向上。",
+        "GitHub Pagesを利用して、コードの変更が自動的にサイトへ反映されるCI/CDパイプラインを構築。"
+    ],
     "githubUrl": "https://github.com/or1215/my-portfolio",
     "siteUrl": "https://or1215.github.io/my-portfolio/",
     "thumbnail": "./img/works/my-portfolio.png"
@@ -27,7 +37,8 @@
     "id": "blog-app",
     "title": "Blog App",
     "category": "DevOps / Infrastructure",
-    "period": "2026.04",
+    "period": "2026.03 - 2026.04",
+    "objective": " AWSを用いた実践的なインフラ構築・Webアプリ開発の経験を積み、クラウドエンジニア・バックエンドエンジニアとしての実績を作ること。",
     "techStack": ["GitHub Actions", "AWS EC2", "systemd", "Shell Script", "AWS S3", "AWS CloudFront"],
     "description": "GitHub Actionsを利用して、ブログアプリのCI/CDパイプラインを構築。コードの変更が自動的にEC2インスタンスへデプロイされる仕組みを実装。",
     "details": [
@@ -46,7 +57,8 @@
     "id": "serverless-news-summarizer",
     "title": "Serverless News Summarizer",
     "category": "DevOps / Lambda / S3 / CloudFront",
-    "period": "",
+    "period": "2026.04 - 2026.05",
+    "objective": "TypeScriptおよびAWSサーバーレスアーキテクチャの実践的なスキルを習得・証明するため。",
     "techStack": [
       "TypeScript",
       "AWS Lambda",
