@@ -68,11 +68,25 @@ function createPersonalWorksSection(worksData) {
                 <h2 class="c-card__title">${work.title}</h2>
                 <p class="c-card__category">${work.category}</p>
                 <p class="c-card__desc">${work.description}</p>
-                
+
+                <!-- 目的 -->
+                ${work.objective ? `
+                    <div class="c-card__objective">
+                        <p><strong>🎯 目的:</strong> ${work.objective}</p>
+                    </div>
+                ` : ''}
+
+                <!-- スクロール表示される詳細情報 -->
+                ${work.details && work.details.length > 0 ? `
+                    <ul class="c-card__details">
+                        ${work.details.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
+                ` : ''}
+
                 <div class="c-card__tags">
                     ${work.techStack.map(tech => `<span class="c-tag">${tech}</span>`).join('')}
                 </div>
-
+                
                 <div class="c-card__links">
                     ${work.githubUrl ? `<a href="${work.githubUrl}" target="_blank" class="c-link">GitHub</a>` : ''}
                     ${work.siteUrl ? `<a href="${work.siteUrl}" target="_blank" class="c-link">Visit Site</a>` : ''}
@@ -83,4 +97,3 @@ function createPersonalWorksSection(worksData) {
 
     return worksHtml;
 }
-
