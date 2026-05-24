@@ -11,7 +11,7 @@ class CustomHeader extends HTMLElement {
     this.innerHTML = `
       <header class="c-header">
         <div class="c-header__inner">
-            <a href="/" class="c-header__logo">MY - PORTFOLIO</a>
+            <a href="/my-portfolio" class="c-header__logo">MY - PORTFOLIO</a>
             <input id="nav-input" type="checkbox" class="nav-hidden" style="display: none;" />
             <label id="menu-btn" for="nav-input"><span></span></label>
             <nav class="c-nav">
