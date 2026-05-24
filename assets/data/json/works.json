@@ -10,7 +10,7 @@
     "details": [
         "Node.jsとExpressを使用して、ユーザーがイベントを作成・編集・削除できるRESTful APIを構築。",
         "layout.htmlをテンプレートエンジンとして利用し、ユーザーフレンドリーなUIを実装。",
-        "外部のカレンダーライブラリに依存せず、HTML/CSS/JavaScriptを用いてカレンダーおよびイベント管理機能をスクラッチで開発。サーバー主導の動的レイアウト生成ロジックを独自に実装しました。"
+        "外部のカレンダーライブラリに依存せず、HTML/CSS/JavaScriptを用いてカレンダーおよびイベント管理機能をスクラッチで開発。サーバー主導の動的レイアウト生成ロジックを独自に実装。"
     ],
     "githubUrl": "https://github.com/or1215/calendar-app",
     "siteUrl": "https://calendar-app-0kon.onrender.com/",
@@ -39,7 +39,16 @@
     "category": "DevOps / Infrastructure",
     "period": "2026.03 - 2026.04",
     "objective": " AWSを用いた実践的なインフラ構築・Webアプリ開発の経験を積み、クラウドエンジニア・バックエンドエンジニアとしての実績を作ること。",
-    "techStack": ["GitHub Actions", "AWS EC2", "systemd", "Shell Script", "AWS S3", "AWS CloudFront"],
+    "techStack": [
+      "GitHub Actions", 
+      "AWS EC2", 
+      "systemd", 
+      "Shell Script", 
+      "AWS S3", 
+      "AWS CloudFront",
+      "AWS Cognito",
+      "API Gateway"
+    ],
     "description": "GitHub Actionsを利用して、ブログアプリのCI/CDパイプラインを構築。コードの変更が自動的にEC2インスタンスへデプロイされる仕組みを実装。",
     "details": [
         "GitHubのmainブランチへのプッシュを検知し、EC2へ自動デプロイするワークフローを構築。",
@@ -47,7 +56,9 @@
         "systemdを用いたアプリケーションのデーモン化により、エラー時の自動再起動とログ管理の効率化を実現。",
         "GitHub Secretsを利用した安全なSSH認証情報の管理と、AWSセキュリティグループの最適化。",
         "AWS S3とCloudFrontを組み合わせた静的コンテンツの高速配信基盤の構築。",
-        "cognitoを用いた認証基盤の実装により、ユーザー管理と認証を実装"
+        "cognitoを用いた認証基盤の実装により、ユーザー管理と認証を実装。",
+        "AWS CognitoのJWTトークンをpython-joseライブラリで検証。",
+        "オーソライザをFlaskアプリに実装し、ログイン必須ページへの不正アクセスを防止するセキュアな認証フローを構築。"
     ],
     "githubUrl": "https://github.com/or1215/aws-blog-app",
     "siteUrl": "http://54.95.114.190",
@@ -96,11 +107,11 @@
     "techStack": ["Java", "DB（Oracle/PostgreSQL）", "JavaScript", "HTML/CSS", "VBA", "Excel-Linked Tech"],
     "description": "地方自治体向けの消防業務支援システムの開発・保守に参画。フロントからバックエンド、運用支援まで一気通貫で担当。",
     "details": [
-        "国表集計・オンライン報告の自動化による、事務処理工数の大幅な削減",
-        "各種届出・台帳・報告書間のデータ連携基盤の開発による、文書作成コストの最小化",
-        "Excel形式を採用した柔軟な帳票出力機能の実装（現場での様式変更を可能にし、高い拡張性を実現）",
-        "Java/SQLを用いた大規模基盤の保守および、ユーザーの要望に即した新機能追加",
-        "現場職員からの問い合わせに対する技術的サポートおよびトラブルシューティング"
+        "国表集計・オンライン報告の自動化による、事務処理工数の大幅な削減。",
+        "各種届出・台帳・報告書間のデータ連携基盤の開発による、文書作成コストの最小化。",
+        "Excel形式を採用した柔軟な帳票出力機能の実装。（現場での様式変更を可能にし、高い拡張性を実現）",
+        "Java/SQLを用いた大規模基盤の保守および、ユーザーの要望に即した新機能追加。",
+        "現場職員からの問い合わせに対する技術的サポートおよびトラブルシューティング。"
     ],
     "highlights": "『現場の事務負担を減らし、本来の警防・予防業務に集中できる環境を作る』ことを目的とした、実用性の高いシステム開発を追求しています。"
   }
