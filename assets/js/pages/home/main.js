@@ -4,7 +4,7 @@ import { initProfile, initAbout, initSkills, initWorks } from '/my-portfolio/ass
 /* 表示するプロフィール項目 */
 const profileDisplayList = ["NAME","JOB","SNS"];
 /* 表示するwork項目 */
-const workDisplayList = ["calendar-app","my-portfolio","blog-app"];
+const workDisplayList = ["calendar-app","blog-app", "serverless-news-summarizer"];
 
 /* 共通コンポーネントの初期化 */
 document.addEventListener('DOMContentLoaded', async () => {
