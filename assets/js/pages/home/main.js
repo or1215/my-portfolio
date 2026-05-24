@@ -34,22 +34,22 @@ function createProfile(profileData) {
 
 /* 表示するプロフィール項目の生成 */
 function createProfileItems(display) {
-    // 0. 引数
+    // 引数
     const item = 'profile-item';
     const title = 'profile-item-title';
     const text = 'profile-item-text';
 
-    // 1. 各項目の親要素を作成
+    // 各項目の親要素を作成
     const itemDiv = document.createElement('div');
     itemDiv.classList.add(item);
 
-    // 2. タイトル（ラベル）の作成
+    // タイトル（ラベル）の作成
     const titleEl = document.createElement('h2');
     titleEl.classList.add(title);
     titleEl.textContent = display.label;
     itemDiv.appendChild(titleEl);
 
-    // 3.  values 配列をループして p タグを生成
+    // values 配列をループして p タグを生成
     const textEl = document.createElement('p');
     textEl.classList.add(text);
     let textWrapper = '';
@@ -64,22 +64,22 @@ function createProfileItems(display) {
 /* Aboutセクションの生成 */
 function createAbout(aboutData) {
 
-    // 0. 引数
+    // 引数
     const aboutSection = document.getElementById('about');
     if (!aboutSection || !aboutData) return;
     const title = 'about-catchphrase';
     const text = 'about-text';
 
-    // 1. 各項目の親要素を作成
+    // 各項目の親要素を作成
     const aboutContent = document.getElementById('about-content');
 
-    // 2. タイトル（ラベル）の作成
+    // タイトル（ラベル）の作成
     const catchphraseEl = document.createElement('h2');
     catchphraseEl.classList.add(title);
     catchphraseEl.textContent = aboutData.catchphrase;
     aboutContent.appendChild(catchphraseEl);
 
-    // 3.  values 配列をループして p タグを生成
+    // values 配列をループして p タグを生成
     aboutData.contents.forEach(value => {
         const div = document.createElement('div');
         div.classList.add(text);
